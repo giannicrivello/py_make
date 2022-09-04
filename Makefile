@@ -1,7 +1,4 @@
-#!/bin/python3
 
-def getString():
-    return f'''
     #
     # define compiler and compiler flag variables
     #
@@ -42,11 +39,8 @@ def getString():
     # CLASSES is a macro consisting of 4 words (one for each java source file)
     #
 
-    CLASSES = \
-        TokenType.java \
-        Token.java \
-            Lox.java \
-        Scanner.java \
+    #Register calsses here
+    CLASSES = Main.java 
             
 
 
@@ -55,7 +49,7 @@ def getString():
     #
 
     default: classes
-        java lox.Lox
+            #add entry point command here
 
 
     #
@@ -75,11 +69,4 @@ def getString():
 
     clean:
         $(RM) *.class
-    '''
-def main():
-    with open('Makefile', 'w') as file:
-        file.write(getString())
-
-    file.close()
-if __name__ == "__main__":
-    main()
+    
